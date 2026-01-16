@@ -46,53 +46,54 @@ class HomeView extends GetView<HomeController> {
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20, 60, 20, 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    greeting,
-                                    style: TextStyle(
-                                      color: Colors.white.withOpacity(0.8),
-                                      fontSize: 16,
-                                    ),
+                      child: GestureDetector(
+                        onTap: () => Get.toNamed(Routes.PROFILE),
+                        behavior: HitTestBehavior.opaque,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  greeting,
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.8),
+                                    fontSize: 16,
                                   ),
-                                  Text(
-                                    user?.displayName ??
-                                        user?.email?.split('@')[0] ??
-                                        "User",
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.2),
-                                  borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: IconButton(
-                                  onPressed: () async {
-                                    await FirebaseAuth.instance.signOut();
-                                    Get.offAllNamed(Routes.LOGIN);
-                                  },
-                                  icon: const Icon(
-                                    Icons.logout,
+                                Text(
+                                  user?.displayName ??
+                                      user?.email?.split('@')[0] ??
+                                      "User",
+                                  style: const TextStyle(
                                     color: Colors.white,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Hero(
+                              tag: 'profile_pic',
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.white,
+                                    width: 2,
+                                  ),
+                                ),
+                                child: const CircleAvatar(
+                                  radius: 25,
+                                  backgroundImage: NetworkImage(
+                                    "https://ui-avatars.com/api/?background=random",
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
-                        ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
