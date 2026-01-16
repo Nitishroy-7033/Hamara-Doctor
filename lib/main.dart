@@ -5,6 +5,8 @@ import 'app/routes/app_pages.dart';
 import 'core/theme/app_theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
   runApp(const HamaraDoctorApp());
 }
 

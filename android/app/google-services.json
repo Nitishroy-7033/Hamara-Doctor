@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1094263481730",
+    "project_id": "apna-doctor-27db5",
+    "storage_bucket": "apna-doctor-27db5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094263481730:android:4e3f770287587c62599b9b",
+        "android_client_info": {
+          "package_name": "com.example.hamara_doctor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdlMZD4n3cWe1mkrM-W5-ZodzsDiMvzKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
